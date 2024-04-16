@@ -20,13 +20,6 @@ const Navbar = () => {
                 Register
             </NavLink>
 
-            <NavLink
-                to="/login"
-                className={({ isActive }) =>
-                    isActive ? 'text-green-500 bg-gray-600 p-2 rounded-lg font-bold' : 'font-bold  p-2'
-                }>
-                Login
-            </NavLink>
 
             <NavLink
                 to="/Details"

@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "estate_title": "Luxury Villa with Ocean View",
+    "segment_name": "Luxury",
+    "description": "Beautiful villa overlooking the ocean, with spacious living areas, modern kitchen, and private swimming pool.",
+    "price": "$1,500,000",
+    "status": "sale",
+    "area": "3000 sq ft",
+    "location": "Malibu, California",
+    "facilities": ["living room", "swimming pool", "kitchen"],
+    "image": "https://i.ibb.co/3FGkxpn/186077-1.jpg"
+  },
+  {
+    "id": 2,
+    "estate_title": "Cozy Downtown Apartment",
+    "segment_name": "Apartment",
+    "description": "Charming apartment located in the heart of the city, close to all amenities and transportation.",
+    "price": "$2,500/month",
+    "status": "rent",
+    "area": "800 sq ft",
+    "location": "New York City, New York",
+    "facilities": ["living room", "kitchen"],
+    "image": "https://i.ibb.co/7V87S93/pexels-binyamin-mellish-1396132.jpg"
+  },
+  {
+    "id": 3,
+    "estate_title": "Modern Loft with City View",
+    "segment_name": "Luxury",
+    "description": "Sleek and modern loft offering stunning views of the city skyline, perfect for urban living.",
+    "price": "$900,000",
+    "status": "sale",
+    "area": "1800 sq ft",
+    "location": "Los Angeles, California",
+    "facilities": ["living room", "kitchen"],
+    "image": "https://i.ibb.co/gTPvd56/pexels-curtis-adams-5502227.jpg"
+  },
+  {
+    "id": 4,
+    "estate_title": "Spacious Family Home",
+    "segment_name": "House",
+    "description": "Family-friendly home with ample space for kids and pets, featuring a large backyard and cozy living areas.",
+    "price": "$350,000",
+    "status": "sale",
+    "area": "2500 sq ft",
+    "location": "Austin, Texas",
+    "facilities": ["living room", "kitchen", "backyard"],
+    "image": "https://i.ibb.co/N2MW2tS/pexels-pixabay-53610.jpg"
+  },
+  {
+    "id": 5,
+    "estate_title": "Seaside Cottage Retreat",
+    "segment_name": "House",
+    "description": "Quaint cottage located steps away from the beach, offering a peaceful retreat with coastal charm.",
+    "price": "$400,000",
+    "status": "sale",
+    "area": "1200 sq ft",
+    "location": "Santa Cruz, California",
+    "facilities": ["living room", "kitchen", "patio"],
+    "image": "https://i.ibb.co/tqrTXd5/pexels-pixabay-280222.jpg"
+  },
+  {
+    "id": 6,
+    "estate_title": "Mountain View Chalet",
+    "segment_name": "Chalet",
+    "description": "Rustic chalet nestled in the mountains, surrounded by nature and offering panoramic views of the valley.",
+    "price": "$600,000",
+    "status": "sale",
+    "area": "2000 sq ft",
+    "location": "Aspen, Colorado",
+    "facilities": ["living room", "kitchen", "fireplace", "deck"],
+    "image": "https://i.ibb.co/VWzZ8yv/pexels-thgusstavo-santana-2102587.jpg"
+  }
+]
