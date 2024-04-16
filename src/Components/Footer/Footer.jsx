@@ -1,7 +1,6 @@
-
 const Footer = () => {
     return (
-        <footer className="footer  p-10 bg-base-300 text-base-content grid md:grid-cols-3">
+        <footer className="footer p-10 glass mt-2 bg-base-300 text-base-content grid md:grid-cols-3 ">
             <div>
                 <h6 className="footer-title">Real Estate</h6>
                 <a className="link link-hover">house</a>
@@ -12,7 +11,6 @@ const Footer = () => {
                 <a className="link link-hover">About us</a>
                 <a className="link link-hover">Contact</a>
                 <a className="link link-hover">Jobs</a>
-               
             </div>
             <div>
                 <h6 className="footer-title">Social</h6>

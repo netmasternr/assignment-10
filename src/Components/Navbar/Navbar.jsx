@@ -11,7 +11,6 @@ const Navbar = () => {
                 }>
                 Home
             </NavLink>
-
             <NavLink
                 to="/register"
                 className={({ isActive }) =>
@@ -19,8 +18,6 @@ const Navbar = () => {
                 }>
                 Register
             </NavLink>
-
-
             <NavLink
                 to="/Details"
                 className={({ isActive }) =>
@@ -33,8 +30,7 @@ const Navbar = () => {
 
     return (
 
-
-        <div className="navbar bg-base-100 px-4 fixed  z-20 max-w-7xl mx-auto mb-6 ">
+        <div className="navbar  md:px-4 fixed z-10  md:z-10 max-w-7xl mx-auto md:mb-6 md:glass text-black ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -51,7 +47,7 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <Link to="/" className="btn btn-ghost text-xl">
+                <Link to="/" className="btn glass btn-ghost text-xl">
                     HomeHarbor
                 </Link>
             </div>
@@ -70,9 +66,9 @@ const Navbar = () => {
                         />
                     </div>
                 </Link>
-                <div className="dropdown dropdown-hover">
-                    <div tabIndex={0} role="button" className="btn m-4">Hover</div>
-                    <ul tabIndex={0} className="dropdown-content z-[2] menu p-2 shadow bg-base-100 rounded-box w-28">
+                <div className="dropdown dropdown-hover ">
+                    <div tabIndex={0} role="button " className="btn md:m-4 bg-slate-500 text-white glass">Login</div>
+                    <ul tabIndex={0} className="dropdown-content z-[2] menu p-1 bg-slate-500 shadow glass rounded-box w-28">
                         <li><a>Item 1</a></li>
                         <li><a>Item 2</a></li>
                     </ul>

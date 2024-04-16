@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import 'animate.css/animate.min.css';
 
 
 const Card = ({ card }) => {
 
-    const { estate_title, segment_name, price, status, area, image, description, facilities } = card;
+    const { estate_title, segment_name, price, status, area, image, description, facilities, id } = card;
 
 
 
     return (
-        <div className="max-w-lg p-4 shadow-md dark:bg-gray-50 dark:text-gray-800 ">
+        <div className="max-w-lg p-4 shadow-md  glass dark:text-white-800 mt-3 rounded-lg">
 
             <div className="space-y-4 animate__animated animate__fadeIn ">
                 <div className="space-y-2">
@@ -18,7 +18,7 @@ const Card = ({ card }) => {
                     <h2 className='font-bold'>{estate_title}</h2>
                 </div>
 
-                <div className='flipInX space-y-3 text-xl text-black font-semibold'>
+                <div className='flipInX space-y-3 text-xl text-gray-300 '>
                     <div>
                         {
                             facilities.map((hash, index) => <span key={index} className='mr-3'><a href="">#{hash}</a></span>)
@@ -34,14 +34,11 @@ const Card = ({ card }) => {
                         <p>{price} </p>
                         <p>{area} </p>
                     </div>
-                    <div className="space-y-2">
-
-                        <p className="leading-snug dark:text-gray-600">{description}</p>
-                    </div>
+                    
 
                 </div>
                 <div>
-                    <NavLink><button className='btn btn-primary'>View Details</button></NavLink>
+                    <Link to={`/houseDetails/${id}`}><button className='btn btn-primary'>View Details</button></Link>
                 </div>
             </div>
         </div>

@@ -7,7 +7,12 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [require("daisyui")],
+  // plugins: [require("daisyui", "tailgrids/plugin")],
+  plugins: [
+    require('daisyui'),
+    require('tailgrids/plugin'), // Import the tailgrids/plugin here
+    // Add other Tailwind CSS plugins here if needed
+  ],
 
 }
 
