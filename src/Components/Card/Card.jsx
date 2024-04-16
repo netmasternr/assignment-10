@@ -5,7 +5,7 @@ import 'animate.css/animate.min.css';
 
 const Card = ({ card }) => {
 
-    const { estate_title, segment_name, price, status, area, image, description, facilities, id } = card;
+    const { estate_title, segment_name, price, status, area, image, facilities, id } = card;
 
 
 

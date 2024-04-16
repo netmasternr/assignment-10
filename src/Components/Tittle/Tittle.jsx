@@ -1,7 +1,7 @@
 
 const Tittle = () => {
     return (
-        <div >
+        <div className="animate__animated animate__fadeInLeft">
             <h2 className="text-xl font-bold mb-2">Luxury house with Ocean View</h2>
 
             <div className="divider w-1/3 mx-auto"></div> 

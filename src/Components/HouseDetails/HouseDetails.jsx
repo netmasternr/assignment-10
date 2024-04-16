@@ -9,10 +9,10 @@ const HouseDetails = () => {
     console.log(detail)
 
     return (
-        <div className="max-w-8xl mx-auto ml-5 pt-24">
+        <div className="max-w-8xl mx-auto  pt-24">
 
             <div className="max-w-full p-4 shadow-md  glass dark:text-white-800 mt-3 rounded-lg pb-10 ">
-                <div className="space-y-4 animate__animated animate__fadeIn ">
+                <div className="space-y-4 animate__animated animate__slideInDown ">
                     <div className="space-y-2">
                         <img src={detail.image} alt="" className="block object-cover object-center w-full  rounded-md max-h-96 dark:bg-gray-500" />
                         <h2 className='font-bold'>{detail.estate_title}</h2>

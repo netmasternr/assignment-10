@@ -5,6 +5,7 @@ import Login from "../Components/Login/Login";
 import Register from "../Components/Register/Register";
 import ErrorPage from "../Components/ErrorPage/ErrorPage";
 import HouseDetails from "../Components/HouseDetails/HouseDetails";
+import Contract from "../Components/Contract/Contract";
 
 const routes = createBrowserRouter([
 
@@ -31,7 +32,12 @@ const routes = createBrowserRouter([
             element: <HouseDetails/>,
             loader: ()=> fetch('/home.json'),
 
+           },
+           {
+            path:'/contract',
+            element:<Contract></Contract>
            }
+           
 
         ]
         
