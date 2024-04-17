@@ -55,7 +55,7 @@ const Navbar = () => {
                     {navLinks}
                 </ul>
             </div>
-            <div className="navbar-end md:gap-3 ml-auto">
+            <div className="navbar-end gap-2 md:gap-3 ml-auto">
                 <Link>
                     <div className="w-10">
                         <img
@@ -66,8 +66,8 @@ const Navbar = () => {
                     </div>
                 </Link>
                 <div className="dropdown dropdown-hover ">
-                    <div tabIndex={0} role="button " className="btn md:m-4 bg-slate-500 text-white glass">Login</div>
-                    <ul tabIndex={0} className="dropdown-content z-[2] menu p-1 bg-slate-500 shadow glass rounded-box w-28">
+                    <div tabIndex={0} role="button " className="btn md:m-4 bg-slate-800 text-green-400 glass">Login</div>
+                    <ul tabIndex={0} className="dropdown-content z-[2] menu p-1  shadow glass rounded-box w-28 text-green-500 bg-gray-800 text-base font-bold">
                         <li><a>Profile</a></li>
                         <li><a>Log out</a></li>
                     </ul>
