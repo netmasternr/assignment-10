@@ -1,4 +1,3 @@
-import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
@@ -12,11 +11,11 @@ const Navbar = () => {
                 Home
             </NavLink>
             <NavLink
-                to="/register"
+                to="/login"
                 className={({ isActive }) =>
                     isActive ? 'text-green-500 bg-gray-600 p-2 rounded-lg font-bold' : 'font-bold  p-2'
                 }>
-                Register
+                Login
             </NavLink>
             <NavLink
                 to="/contract"
@@ -43,7 +42,7 @@ const Navbar = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
                         </svg>
                     </div>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 space-x-3">
+                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 space-x-3 text-gray-400">
                         {navLinks}
                     </ul>
                 </div>
@@ -69,8 +68,8 @@ const Navbar = () => {
                 <div className="dropdown dropdown-hover ">
                     <div tabIndex={0} role="button " className="btn md:m-4 bg-slate-500 text-white glass">Login</div>
                     <ul tabIndex={0} className="dropdown-content z-[2] menu p-1 bg-slate-500 shadow glass rounded-box w-28">
-                        <li><a>Item 1</a></li>
-                        <li><a>Item 2</a></li>
+                        <li><a>Profile</a></li>
+                        <li><a>Log out</a></li>
                     </ul>
                 </div>
             </div>

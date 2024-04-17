@@ -1,12 +1,12 @@
 
 const Tittle = () => {
     return (
-        <div className="animate__animated animate__fadeInLeft">
-            <h2 className="text-xl font-bold mb-2">Luxury house with Ocean View</h2>
+        <div className="animate__animated animate__fadeInLeft px-4">
+            <h2 className="text-xl font-bold">Luxury house with Ocean View</h2>
 
             <div className="divider w-1/3 mx-auto"></div> 
 
-            <p className="text-sm text-gray-400 mb-4">
+            <p className="text-sm text-gray-400 mb-2">
                 Beautiful villa overlooking the ocean, with spacious living areas, modern kitchen, and private swimming pool.
             </p>
             <p className="text-sm text-gray-400 mb-1">

@@ -2,10 +2,10 @@
 const Contract = () => {
     return (
 
-        <div className="max-w-8xl mx-auto pt-5 md:pt-24">
+        <div className="max-w-8xl mx-auto -mt-1  md:-mt-4  md:pt-24">
             <section className="bg-white dark:bg-gray-900">
                 <div className="container px-6 py-12 mx-auto">
-                    <div className="text-center">
+                    <div className="text-center pt-6">
                         <p className="font-medium text-blue-500 dark:text-blue-400">Contact us</p>
 
                         <h1 className="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-white">Get in touch</h1>
