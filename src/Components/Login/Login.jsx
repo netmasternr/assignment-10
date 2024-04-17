@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "aos/dist/aos.css";
 import { useForm } from "react-hook-form";
 import SocialLogin from "../Tittle/SocialLogin/SocialLogin";
@@ -7,6 +7,7 @@ import UseAuth from "../FIrebaseProvider/Hooks/UseAuth";
 
 const Login = () => {
     const { signInUser } = UseAuth();
+    const navigate = useNavigate();
 
     const {
         register,
@@ -21,7 +22,11 @@ const Login = () => {
         signInUser(email, password)
             .then(result => {
                 console.log(result.user)
+
+                // navigate after login
+                navigate(location?.state ? location.state : '/')
             })
+
             .catch(error => {
                 console.log('error', error)
             })
