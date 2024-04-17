@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 import "aos/dist/aos.css";
 import "aos/dist/aos.css";
-import { useContext } from "react";
-import { AuthContext } from "../FIrebaseProvider/FIrebaseProvider";
 import { useForm } from "react-hook-form";
+import UseAuth from "../FIrebaseProvider/Hooks/UseAuth";
 
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser } = UseAuth();
     //    console.log(createUser)
 
     // react hook from

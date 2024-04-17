@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 import "aos/dist/aos.css";
-import { useContext } from "react";
-import { AuthContext } from "../FIrebaseProvider/FIrebaseProvider";
 import { useForm } from "react-hook-form";
-import { FaGoogle, FaGithub   } from "react-icons/fa6";
+import SocialLogin from "../Tittle/SocialLogin/SocialLogin";
+import UseAuth from "../FIrebaseProvider/Hooks/UseAuth";
 
 
 const Login = () => {
-    const { signInUser } = useContext(AuthContext);
+    const { signInUser } = UseAuth();
 
     const {
         register,
@@ -27,9 +26,6 @@ const Login = () => {
                 console.log('error', error)
             })
     }
-
-
-
 
     return (
         <div className="max-w-8xl mx-auto -mt-1  md:-mt-4  pt-28">
@@ -64,9 +60,8 @@ const Login = () => {
                 <div className="divider">OR</div>
 
                 <div className="flex gap-8 justify-center">
-                    <button className="btn btn-outline"><FaGoogle /> Google</button>
+                    <SocialLogin></SocialLogin>
 
-                    <button className="btn btn-outline"><FaGithub /> Github</button>
                 </div>
 
                 <div className="flex items-center justify-center gap-10 mt-6">
