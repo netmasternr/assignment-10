@@ -46,7 +46,7 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <Link to="/" className="btn glass btn-ghost text-xl">
+                <Link to="/" className="btn glass btn-ghost md:text-xl">
                     HomeHarbor
                 </Link>
             </div>
@@ -55,7 +55,7 @@ const Navbar = () => {
                     {navLinks}
                 </ul>
             </div>
-            <div className="navbar-end gap-2 md:gap-3 ml-auto">
+            <div className="navbar-end gap-2 md:gap-3 ml-auto mr-6 md:mr-0">
                 <Link>
                     <div className="w-10">
                         <img
@@ -67,9 +67,9 @@ const Navbar = () => {
                 </Link>
                 <div className="dropdown dropdown-hover ">
                     <div tabIndex={0} role="button " className="btn md:m-4 bg-slate-800 text-green-400 glass">Login</div>
-                    <ul tabIndex={0} className="dropdown-content z-[2] menu p-1  shadow glass rounded-box w-28 text-green-500 bg-gray-800 text-base font-bold">
+                    <ul tabIndex={0} className="dropdown-content z-[2] menu p-1  shadow glass rounded-box w-24 text-green-500 bg-gray-800 text-base font-bold">
                         <li><a>Profile</a></li>
-                        <li><a>Log out</a></li>
+                        <li><a>Logout</a></li>
                     </ul>
                 </div>
             </div>
