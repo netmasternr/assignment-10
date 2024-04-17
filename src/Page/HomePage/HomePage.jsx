@@ -7,7 +7,7 @@ import Footer from "../../Components/Footer/Footer";
 const HomePage = () => {
 
     const cards = useLoaderData();
-    console.log(cards)
+    // console.log(cards)
 
     return (
         <div>

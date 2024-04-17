@@ -1,51 +1,83 @@
 import { Link } from "react-router-dom";
-import "aos/dist/aos.css"; 
-import AOS from "aos"; 
-import { useEffect } from "react";
+import "aos/dist/aos.css";
+import "aos/dist/aos.css";
+import { useContext } from "react";
+import { AuthContext } from "../FIrebaseProvider/FIrebaseProvider";
+import { useForm } from "react-hook-form";
 
 
 const Register = () => {
+    const { createUser } = useContext(AuthContext);
+    //    console.log(createUser)
 
-// for aos animation
-        useEffect(() => {
-            AOS.init();
-        }, []);
-    
+    // react hook from
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm()
+
+    const onSubmit = (data) => {
+        const { email, password } = data;
+       
+        createUser(email, password)
+
+        .then((result) => {
+           console.log(result)
+          })
+
+    }
+
 
 
     return (
         <div className="max-w-8xl mx-auto -mt-1  md:-mt-4  pt-28">
 
-            <div  data-aos="zoom-in" data-aos-delay="100" data-aos-anchor=".example-selector" className="bg-gray-600 rounded-lg glass max-w-lg mx-auto p-8 ">
-                <form className=" px-7 md:px-0 md:max-w-md mx-auto">
+            <div className="bg-gray-600 rounded-lg glass max-w-lg mx-auto p-8 ">
+                <form onSubmit={handleSubmit(onSubmit)} className=" px-7 md:px-0 md:max-w-md mx-auto">
 
                     <div className="mb-4">
-                        <label htmlFor="name"  data-aos="fade-up" data-aos-delay="200" className="block text-sm font-medium text-white">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Name" className="w-full px-3 py-2 border rounded-md" />
+                        <label htmlFor="name" className="block text-sm font-medium text-white">Name</label>
+
+                        <input type="text" id="name" name="name" placeholder="Name" className="w-full px-3 py-2 border rounded-md"
+                            {...register("fullName", { required: true })} />
+
+                        {errors.fullName && <span className="text-red-800 font-bold">This field is required</span>}
                     </div>
 
                     <div className="mb-4">
-                        <label htmlFor="photo" data-aos="fade-up" data-aos-delay="400" className="block text-sm font-medium text-white">Photo</label>
+                        <label htmlFor="photo" className="block text-sm font-medium text-white">Photo</label>
+
                         <input type="text" id="photo" name="photo" placeholder="URL" className="w-full px-3 py-2 border rounded-md" />
                     </div>
 
                     <div className="mb-4">
-                        <label htmlFor="email" data-aos="fade-up" data-aos-delay="400" className="block text-sm font-medium text-white">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Email" className="w-full px-3 py-2 border rounded-md" />
+                        <label htmlFor="email" className="block text-sm font-medium text-white">Email</label>
+
+                        <input type="email" id="email" name="email" placeholder="Email" className="w-full px-3 py-2 border rounded-md"
+                            {...register("email", { required: true })} />
+
+                        {errors.email && <span className="text-red-800 font-bold">This field is required</span>}
+
                     </div>
 
                     <div className="mb-4">
-                        <label htmlFor="password" data-aos="fade-up" data-aos-delay="400" className="block text-sm font-medium text-white">Password</label>
-                        <input type="password" id="password" name="password" placeholder="Password" className="w-full px-3 py-2 border rounded-md" />
+                        <label htmlFor="password" className="block text-sm font-medium text-white">Password</label>
+
+                        <input type="password" id="password" name="password" placeholder="Password" className="w-full px-3 py-2 border rounded-md"
+                            {...register("password", { required: true })}
+                        />
+                        {errors.password && <span className="text-red-800 font-bold">This field is required</span>}
                     </div>
-                    <button type="submit" data-aos="fade-up" data-aos-delay="400" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 w-full">Register</button>
+
+                    <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 w-full">Register</button>
                 </form>
 
-                <div className="flex items-center justify-center gap-10 mt-6"> 
-                    <p data-aos="fade-up" data-aos-delay="400" className="text-white mt-2 text-center"> have an account ?</p>
+                <div className="flex items-center justify-center gap-10 mt-6">
+                    <p className="text-white mt-2 text-center"> have an account ?</p>
 
                     <Link to='/login'>
-                        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600" data-aos="fade-up" data-aos-delay="400">Login</button>
+                        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600" >Login</button>
                     </Link>
 
                 </div>
