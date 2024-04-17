@@ -1,6 +1,11 @@
 import { Link, NavLink } from 'react-router-dom';
+import UseAuth from '../FIrebaseProvider/Hooks/UseAuth';
 
 const Navbar = () => {
+    const { logOut, user } = UseAuth();
+
+
+
     const navLinks = (
         <>
             <NavLink
@@ -22,7 +27,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                     isActive ? 'text-green-500 bg-gray-600 p-2 rounded-lg font-bold' : 'font-bold  p-2'
                 }>
-               contract
+                contract
             </NavLink>
         </>
     );
@@ -57,21 +62,31 @@ const Navbar = () => {
             </div>
             <div className="navbar-end gap-2 md:gap-3 ml-auto mr-6 md:mr-0">
                 <Link>
-                    <div className="w-10">
-                        <img
-                            className="rounded-full"
-                            alt="Tailwind CSS Navbar component"
-                            src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                        />
-                    </div>
+                    {
+                        user?.email && (
+                            <div className="w-10 group relative">
+                                <img
+                                    className="rounded-full"
+                                    alt="Tailwind CSS Navbar component"
+                                    src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                                />
+                                <div className="hidden group-hover:block absolute top-full left-1/2 transform -translate-x-1/2 p-2 bg-gray-800 text-white text-sm rounded shadow-lg">
+                                    {user.displayName}
+                                </div>
+                            </div>
+                        )
+
+                    }
                 </Link>
-                <div className="dropdown dropdown-hover ">
-                    <div tabIndex={0} role="button " className="btn md:m-4 bg-slate-800 text-green-400 glass">Login</div>
-                    <ul tabIndex={0} className="dropdown-content z-[2] menu p-1  shadow glass rounded-box w-24 text-green-500 bg-gray-800 text-base font-bold">
-                        <li><a>Profile</a></li>
-                        <li><a>Logout</a></li>
+                <details className="dropdown pt-2 mr-1 md:mr-6">
+                    <summary className="m-1 btn">Login</summary>
+                    <ul className="p-2 shadow menu dropdown-content z-[1]  text-bla rounded-box glass w-28 bg-gray-500">
+                        <li><a>Update profile</a></li>
+                        <li>
+                            <button onClick={logOut}>Log Out</button>
+                        </li>
                     </ul>
-                </div>
+                </details>
             </div>
         </div>
 
