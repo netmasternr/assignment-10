@@ -1,12 +1,13 @@
 
+import { Navigate, useLocation } from 'react-router-dom';
 import UseAuth from '../FIrebaseProvider/Hooks/UseAuth';
-import Login from '../Login/Login';
 
 const PrivateRoute = ({children}) => {
     const {user} = UseAuth();
+    const location = useLocation();
 
     if(!user){
-        return <Login></Login>
+        return <Navigate to='/login' state={location?.pathname || '/'}></Navigate>
     }
     return (
         <div >

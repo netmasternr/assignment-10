@@ -79,7 +79,8 @@ const Navbar = () => {
                     }
                 </Link>
                 <details className="dropdown pt-2 mr-1 md:mr-6">
-                    <summary className="m-1 btn">Login</summary>
+                    <summary className="m-1 btn">{user.displayName
+                    }</summary>
                     <ul className="p-2 shadow menu dropdown-content z-[1]  text-bla rounded-box glass w-28 bg-gray-500">
                         <li><a>Update profile</a></li>
                         <li>
