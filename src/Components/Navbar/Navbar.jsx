@@ -1,6 +1,7 @@
 import { Link, NavLink } from 'react-router-dom';
 import UseAuth from '../FIrebaseProvider/Hooks/UseAuth';
 
+
 const Navbar = () => {
     const { logOut, user } = UseAuth();
 
@@ -104,6 +105,7 @@ const Navbar = () => {
                     }
                 </details>
             </div>
+            
         </div>
 
     );

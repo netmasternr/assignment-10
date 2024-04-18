@@ -3,11 +3,16 @@ import "aos/dist/aos.css";
 import "aos/dist/aos.css";
 import { useForm } from "react-hook-form";
 import UseAuth from "../FIrebaseProvider/Hooks/UseAuth";
+import { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 const Register = () => {
     const { createUser, updateUserProfile } = UseAuth();
     //    console.log(createUser)
+
 
     // react hook from
     const {
@@ -21,23 +26,43 @@ const Register = () => {
     const location = useLocation()
     const form = location?.state || '/'
 
-
     const onSubmit = (data) => {
         const { email, password, image, fullName } = data;
+
+        // Validate password
+        const uppercaseRegex = /(?=.*[A-Z])/;
+        const lowercaseRegex = /(?=.*[a-z])/;
+
+        if (!uppercaseRegex.test(password)) {
+            toast.error('Password must contain at least one uppercase letter');
+            return;
+        }
+
+        if (!lowercaseRegex.test(password)) {
+            toast.error('Password must contain at least one lowercase letter');
+            return;
+        }
+
 
         // create user and update profile
         createUser(email, password)
             .then(result => {
                 updateUserProfile(image, fullName)
-                .then(()=>{
-                    if (result.user) {
-                        // navigate
-                        navigate(form)
-                    }
-                })
-            });
-    };
+                    .then(() => {
+                        if (result.user) {
+                            // navigate
+                            navigate(form)
+                        }
+                    })
+                toast.success('Registered Successfully')
+            })
 
+
+            .catch(error => {
+                // console.log(error)
+                toast.error('at least 6 characters');
+            })
+    };
 
 
     return (
@@ -90,11 +115,10 @@ const Register = () => {
                         <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600" >Login</button>
                     </Link>
 
+
                 </div>
+                <ToastContainer />
             </div>
-
-
-
         </div>
     );
 };

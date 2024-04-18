@@ -3,11 +3,11 @@ import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndP
 import { createContext, useEffect, useState } from "react";
 import auth from "../../firebase/firebase.config";
 import { GoogleAuthProvider } from "firebase/auth";
-
 import { GithubAuthProvider } from "firebase/auth";
-
-
 export const AuthContext = createContext(null);
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 // google and github provider here
 const googleProvider = new GoogleAuthProvider();
@@ -21,7 +21,7 @@ const FIrebaseProvider = ({ children }) => {
     console.log('user', user)
 
     const [loading, setLoading] = useState(true)
-    console.log(loading)
+    // console.log(loading)
 
     // create user
     const createUser = (email, password) => {

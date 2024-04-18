@@ -3,6 +3,9 @@ import "aos/dist/aos.css";
 import { useForm } from "react-hook-form";
 import SocialLogin from "../Tittle/SocialLogin/SocialLogin";
 import UseAuth from "../FIrebaseProvider/Hooks/UseAuth";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 const Login = () => {
@@ -27,14 +30,18 @@ const Login = () => {
 
             .then(result => {
                 if (result.user) {
+                    
                     // navigate
                     navigate(form)
 
                 }
+               
             })
+            toast.success('Login successfully')
 
             .catch(error => {
-                console.log('error', error)
+                // console.log(error.message)
+                toast.error(error.message)
             })
     }
 
@@ -83,6 +90,7 @@ const Login = () => {
                             type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 "> Register</button>
                     </Link>
                 </div>
+                <ToastContainer />
             </div>
         </div>
     );
