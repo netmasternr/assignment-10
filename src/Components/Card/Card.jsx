@@ -10,7 +10,7 @@ const Card = ({ card }) => {
 
 
     return (
-        <div className="max-w-lg p-4 shadow-md  glass dark:text-white-800 mt-3 rounded-lg">
+        <div className="max-w-lg p-1 shadow-md  glass dark:text-white-800 mt-3 rounded-lg">
 
             <div className="space-y-4 animate__animated animate__fadeIn ">
                 <div className="space-y-2">

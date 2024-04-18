@@ -4,8 +4,6 @@ import UseAuth from '../FIrebaseProvider/Hooks/UseAuth';
 const Navbar = () => {
     const { logOut, user } = UseAuth();
 
-
-
     const navLinks = (
         <>
             <NavLink
@@ -15,13 +13,7 @@ const Navbar = () => {
                 }>
                 Home
             </NavLink>
-            <NavLink
-                to="/login"
-                className={({ isActive }) =>
-                    isActive ? 'text-green-500 bg-gray-600 p-2 rounded-lg font-bold' : 'font-bold  p-2'
-                }>
-                Login
-            </NavLink>
+           
             <NavLink
                 to="/contract"
                 className={({ isActive }) =>
@@ -29,12 +21,20 @@ const Navbar = () => {
                 }>
                 contract
             </NavLink>
+
+            <NavLink
+                to="/updateProfile"
+                className={({ isActive }) =>
+                    isActive ? 'text-green-500 bg-gray-600 p-2 rounded-lg font-bold' : 'font-bold  p-2'
+                }>
+                Update Profile
+            </NavLink>
         </>
     );
 
     return (
 
-        <div className="navbar  md:px-4 fixed z-10  md:z-10 max-w-7xl mx-auto md:mb-6 md:glass text-black ">
+        <div className="navbar  md:px-4 fixed z-10   max-w-7xl mx-auto md:mb-6 md:pt-4 md:glass text-white rounded-s-lg ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -79,13 +79,25 @@ const Navbar = () => {
                     }
                 </Link>
                 <details className="dropdown pt-2 mr-1 md:mr-6">
-                    <summary className="m-1 btn">Account</summary>
-                    <ul className="p-2 shadow menu dropdown-content z-[1]  text-bla rounded-box glass w-28 bg-gray-500">
-                        <li><a>Update profile</a></li>
-                        <li>
-                            <button onClick={logOut}>Log Out</button>
-                        </li>
-                    </ul>
+
+                    {
+                        user?.displayName ?
+                            <summary className="m-1 btn">Account</summary>
+                            :
+                            <summary className="m-1 btn"><a href="/login">Login</a></summary>
+
+                    }
+
+                    {
+                        user ?
+                            <ul className="p-2 shadow menu dropdown-content z-[1]  text-bla rounded-box glass  w-28 bg-gray-500">
+                                <button onClick={logOut} className='font-bold'>
+                                    Log Out
+                                </button>
+                            </ul>
+                            :
+                            ''
+                    }
                 </details>
             </div>
         </div>

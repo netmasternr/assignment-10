@@ -1,7 +1,7 @@
 * live link https://real-state-assignment-50aec.web.app/
 
 
-npm package
+npm package 
 * Animate.css,
 * swiper slider
 * react hook form

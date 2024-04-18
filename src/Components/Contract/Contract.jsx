@@ -1,9 +1,11 @@
+import Footer from "../Footer/Footer";
+
 
 const Contract = () => {
     return (
 
         <div className="max-w-8xl mx-auto -mt-1  md:-mt-4  md:pt-24">
-            <section className="bg-white dark:bg-gray-900 animate__animated animate__fadeIn">
+            <section className="bg-white dark:bg-gray-900 animate__animated animate__fadeIn min-h-screen">
                 <div className="container px-6 py-12 mx-auto">
                     <div className="text-center pt-6">
                         <p className="font-medium text-blue-500 dark:text-blue-400">Contact us</p>
@@ -53,6 +55,10 @@ const Contract = () => {
                     </div>
                 </div>
             </section>
+
+            <div className="">
+                <Footer />
+            </div>
         </div>
 
 

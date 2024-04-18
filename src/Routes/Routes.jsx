@@ -7,6 +7,7 @@ import HouseDetails from "../Components/HouseDetails/HouseDetails";
 import Contract from "../Components/Contract/Contract";
 import Register from "../Components/Register/Register";
 import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
+import UpdateProfile from "../Components/UpdateProfile/UpdateProfile";
 
 const routes = createBrowserRouter([
 
@@ -40,7 +41,11 @@ const routes = createBrowserRouter([
             {
                 path: '/contract',
                 element: <Contract></Contract>
-            }
+            },
+            {
+                path:'/updateProfile',
+                element: <UpdateProfile></UpdateProfile>
+            },
 
 
         ]

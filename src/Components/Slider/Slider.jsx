@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
-import { Navigation, Pagination, Scrollbar, A11y, EffectFlip } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar, A11y,} from 'swiper/modules';
 import { EffectFade,  } from 'swiper/modules';
 
 
@@ -14,7 +14,7 @@ import home4 from '../../assets/image/pexels-binyamin-mellish-1396122.jpg';
 
 const Slider = () => {
     return (
-        <div className=''>
+        <div className='-mt-4'>
                 <Swiper
                    modules={[Navigation, Pagination, Scrollbar, A11y, EffectFade, ]}
                     effect="fade"
