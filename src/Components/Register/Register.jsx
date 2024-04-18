@@ -6,7 +6,7 @@ import UseAuth from "../FIrebaseProvider/Hooks/UseAuth";
 
 
 const Register = () => {
-    const { createUser } = UseAuth();
+    const { createUser, updateUserProfile } = UseAuth();
     //    console.log(createUser)
 
     // react hook from
@@ -16,29 +16,27 @@ const Register = () => {
         formState: { errors },
     } = useForm()
 
-     // navigation
-     const navigate = useNavigate();
-     const location =  useLocation()
-     const form = location?.state || '/'
- 
+    // navigation
+    const navigate = useNavigate();
+    const location = useLocation()
+    const form = location?.state || '/'
+
 
     const onSubmit = (data) => {
-        const { email, password } = data;
+        const { email, password, image, fullName } = data;
+
+        // create user and update profile
         createUser(email, password)
-
-        .then(result =>{
-            if(result.user){
-                // navigate
-                navigate(form)
-                
-            }
-        })
-
-        //   .catch((error) => {
-            
-        //   });
-
-    }
+            .then(result => {
+                updateUserProfile(image, fullName)
+                .then(()=>{
+                    if (result.user) {
+                        // navigate
+                        navigate(form)
+                    }
+                })
+            });
+    };
 
 
 

@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 
 import { createContext, useEffect, useState } from "react";
 import auth from "../../firebase/firebase.config";
@@ -18,15 +18,23 @@ const githubProvider = new GithubAuthProvider();
 const FIrebaseProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
-    console.log('user',user)
+    console.log('user', user)
 
-    const [loading, setLoading]=useState(true)
+    const [loading, setLoading] = useState(true)
     console.log(loading)
 
     // create user
     const createUser = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password)
+    }
+    // update profile
+    const updateUserProfile = (name, image) => {
+
+       return updateProfile(auth.currentUser, {
+            displayName: name, 
+            photoURL: image
+        });
     }
 
     // sign in user
@@ -41,15 +49,15 @@ const FIrebaseProvider = ({ children }) => {
         return signInWithPopup(auth, googleProvider)
     }
 
-  
+
     // github login
     const githubLogin = () => {
         setLoading(true);
         return signInWithPopup(auth, githubProvider)
     }
 
-      // log out 
-      const logOut = ()=>{
+    // log out 
+    const logOut = () => {
         setUser(null)
         return signOut(auth)
     }
@@ -57,13 +65,13 @@ const FIrebaseProvider = ({ children }) => {
 
     // observer, setUser, setLoading, cleanUp function
     useEffect(() => {
-       const unsubscribe = onAuthStateChanged(auth, (user) => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
-                setLoading(false);    
+                setLoading(false);
             }
         });
-        return ()=> unsubscribe();
+        return () => unsubscribe();
     }, [])
 
 
@@ -75,6 +83,7 @@ const FIrebaseProvider = ({ children }) => {
         logOut,
         user,
         loading,
+        updateUserProfile,
     }
 
     return (

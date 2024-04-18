@@ -13,7 +13,7 @@ const Navbar = () => {
                 }>
                 Home
             </NavLink>
-           
+
             <NavLink
                 to="/contract"
                 className={({ isActive }) =>
@@ -30,7 +30,7 @@ const Navbar = () => {
                 Update Profile
             </NavLink>
         </>
-    ); 
+    );
 
     return (
 
@@ -66,12 +66,16 @@ const Navbar = () => {
                         user?.email && (
                             <div className="w-10 group relative">
                                 <img
-                                    className="rounded-full"
+                                    className="rounded-full max-h-8"
                                     alt="Tailwind CSS Navbar component"
-                                    src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                                    src={user?.photoURL ||
+                                        "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                                    }
                                 />
-                                <div className="hidden group-hover:block absolute top-full left-1/2 transform -translate-x-1/2 p-2 bg-gray-800 text-white text-sm rounded shadow-lg">
-                                    {user.displayName}
+
+                                <div 
+                                className="hidden group-hover:block absolute top-full left-1/2 transform -translate-x-1/2 p-2 bg-gray-800 text-white text-sm rounded shadow-lg">
+                                    {user?.displayName || 'not found'}
                                 </div>
                             </div>
                         )
