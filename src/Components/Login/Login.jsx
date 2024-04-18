@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "aos/dist/aos.css";
 import { useForm } from "react-hook-form";
 import SocialLogin from "../Tittle/SocialLogin/SocialLogin";
@@ -7,7 +7,6 @@ import UseAuth from "../FIrebaseProvider/Hooks/UseAuth";
 
 const Login = () => {
     const { signInUser } = UseAuth();
-    const navigate = useNavigate();
 
     const {
         register,
@@ -15,16 +14,23 @@ const Login = () => {
         formState: { errors },
     } = useForm()
 
+    // navigation
+    const navigate = useNavigate();
+    const location = useLocation()
+    const form = location?.state || '/'
+
+
     const onSubmit = (data) => {
         const { email, password } = data;
-
         // signUser call
         signInUser(email, password)
-            .then(result => {
-                console.log(result.user)
 
-                // navigate after login
-                navigate(location?.state ? location.state : '/')
+            .then(result => {
+                if (result.user) {
+                    // navigate
+                    navigate(form)
+
+                }
             })
 
             .catch(error => {

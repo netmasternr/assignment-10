@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "aos/dist/aos.css";
 import "aos/dist/aos.css";
 import { useForm } from "react-hook-form";
@@ -16,15 +16,23 @@ const Register = () => {
         formState: { errors },
     } = useForm()
 
+     // navigation
+     const navigate = useNavigate();
+     const location =  useLocation()
+     const form = location?.state || '/'
+ 
+
     const onSubmit = (data) => {
-        
         const { email, password } = data;
-       
         createUser(email, password)
 
-        .then((result) => {
-           console.log(result)
-          })
+        .then(result =>{
+            if(result.user){
+                // navigate
+                navigate(form)
+                
+            }
+        })
 
         //   .catch((error) => {
             

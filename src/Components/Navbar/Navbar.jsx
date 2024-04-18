@@ -30,11 +30,11 @@ const Navbar = () => {
                 Update Profile
             </NavLink>
         </>
-    );
+    ); 
 
     return (
 
-        <div className="navbar  md:px-4 fixed z-10   max-w-7xl mx-auto md:mb-6 md:pt-4 md:glass text-white rounded-s-lg ">
+        <div className="navbar  md:px-4 fixed z-10   max-w-7xl mx-auto md:mb-6 md:pt-4 glass text-white rounded-s-lg ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -81,7 +81,7 @@ const Navbar = () => {
                 <details className="dropdown pt-2 mr-1 md:mr-6">
 
                     {
-                        user?.displayName ?
+                        user?.email ?
                             <summary className="m-1 btn">Account</summary>
                             :
                             <summary className="m-1 btn"><a href="/login">Login</a></summary>

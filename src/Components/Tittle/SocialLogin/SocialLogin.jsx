@@ -5,9 +5,9 @@ import { useLocation, useNavigate } from "react-router-dom";
 const SocialLogin = () => {
     const {googleLogin, githubLogin} = UseAuth();
 
+    // navigation
     const navigate = useNavigate();
     const location =  useLocation()
-
     const form = location?.state || '/'
 
 
