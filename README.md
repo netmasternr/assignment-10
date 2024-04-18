@@ -11,4 +11,6 @@ features
 * private routes
 * github login
 * google login
+* error toast
+* password validation
 
