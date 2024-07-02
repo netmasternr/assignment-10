@@ -2,9 +2,10 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import "aos/dist/aos.css";
 import { useForm } from "react-hook-form";
 import SocialLogin from "../Tittle/SocialLogin/SocialLogin";
-import UseAuth from "../FIrebaseProvider/Hooks/UseAuth";
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import UseAuth from "../FIrebaseProvider/Hooks/UseAuth";
 
 
 

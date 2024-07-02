@@ -24,8 +24,7 @@ const SocialLogin = () => {
             }
             
         })
-        toast.success('Login Successfully')
-
+  
         .catch(error => {
             // console.log(error.message)
             toast.error(error.message)

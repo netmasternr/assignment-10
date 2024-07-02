@@ -18,7 +18,7 @@ const githubProvider = new GithubAuthProvider();
 const FIrebaseProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
-    console.log('user', user)
+    // console.log('user', user)
 
     const [loading, setLoading] = useState(true)
     // console.log(loading)
@@ -84,6 +84,7 @@ const FIrebaseProvider = ({ children }) => {
         user,
         loading,
         updateUserProfile,
+        setUser
     }
 
     return (
